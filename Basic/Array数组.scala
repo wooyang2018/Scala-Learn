@@ -18,6 +18,8 @@ object Array {
     for (x <- myList) {
       println(x)
     }
+    // 将数组转换成数组缓冲，就可以看到数组中内容
+    println(intValueArr.toBuffer)
     // 计算数组所有元素的总和
     var total = 0.0;
     for (i <- 0 to (myList.length - 1)) {

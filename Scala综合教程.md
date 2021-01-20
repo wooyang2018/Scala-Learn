@@ -368,11 +368,9 @@ object ScalaPartParams  extends App{
 }
 ```
 
-##########续##############
-
 ### 3.14 柯里化(Currying)
 
-柯里化(Currying)指的是将原来接受两个参数的函数变成新的接受一个参数的函数的过程。新 的函数返回一个以原有第二个参数为参数的函数。
+柯里化(Currying)指的是将原来接受两个参数的函数变成新的接受一个参数的函数的过程。新的函数返回一个以原有第二个参数为参数的函数。
 
 ```scala
 /*
@@ -420,7 +418,7 @@ object ScalaPartialFunc  extends App{
 
 ## 4.集合的使用
 
-Scala 的集合有三大类：序列 Seq、集 Set、映射 Map，所有的集合都扩展自 Iterable 特质 在 Scala 中集合有可变（mutable）和不可变（immutable）两种类型，immutable 类型的集合 初始化后就不能改变了（注意与 val 修饰的变量进行区别。
+Scala 的集合有三大类：序列 Seq、集 Set、映射 Map，所有的集合都扩展自 Iterable 特质 在 Scala 中集合有可变（mutable）和不可变（immutable）两种类型，immutable 类型的集合 初始化后就不能改变了（注意与 val 修饰的变量进行区别)。
 
 ![img](https://lwy-picgo-img.oss-cn-beijing.aliyuncs.com/img20210119210147.png)
 
@@ -718,7 +716,7 @@ object ScalaWordCount{
 
 ### 5.1 scala 单例对象
 
-在 Scala 中，是没有 static 这个东西的，但是它也为我们提供了单例模式的实现方法，那 就是使用关键字 object,object 对象不能带参数。
+在 Scala 中，是没有 static 这个东西的，但是它也为我们提供了单例模式的实现方法，那就是使用关键字 object,object 对象不能带参数。
 
 ```scala
 /*
@@ -876,7 +874,7 @@ object Student4{
 }
 ```
 
-### 5.2.3 伴生类 | apply 方法
+#### 5.2.3 伴生类 | apply 方法
 
 在 Scala 中, 当单例对象与某个类共享同一个名称时，他被称作是这个类的伴生对象。必须 在同一个源文件里定义类和它的伴生对象。类被称为是这个单例对象的伴生类。类和它的伴生对象可以互相访问其私有成员。
 
@@ -897,7 +895,7 @@ object test{
 }
 ```
 
-## 5.3 Trait
+### 5.3 Trait
 
 ScalaTrait(特质) 相当于 Java 的接口，实际上它比接口还功能强大。 与接口不同的是，它还可以定义属性和方法的实现。 一般情况下 Scala 的类只能够继承单一父类，但是如果是 Trait(特质) 的话就可以继承多个，实现了多重继承。使用的关键字是 trait。
 
@@ -964,7 +962,7 @@ object test extends App{
 }
 ```
 
-## 5.4 抽象类
+### 5.4 抽象类
 
 在 Scala 中, 使用 abstract 修饰的类称为抽象类. 在抽象类中可以定义属性、未实现的方法和 具体实现的方法。
 
@@ -982,7 +980,7 @@ abstract class Animal{
 }
 ```
 
-## 5.5 继承
+### 5.5 继承
 
 继承是面向对象的概念，用于代码的可重用性。 被扩展的类称为超类或父类, 扩展的类称 为派生类或子类。Scala 可以通过使用 extends 关键字来实现继承其他类或者特质。
 
@@ -1017,20 +1015,20 @@ object test extends App{
 }
 ```
 
-### 5.5.1final 关键字
+#### 5.5.1final 关键字
 
 - 被 final 修饰的类不能被继承；
 - 被 final 修饰的属性不能重写；
 - 被 final 修饰的方法不能被重写。
 
-### 5.5.2 type 关键字
+#### 5.5.2 type 关键字
 
-Scala 里的类型，除了在定义 class,trait,object 时会产生类型，还可以通过 type 关键字来声明 类型。
+Scala 里的类型，除了在定义 class,trait,object 时会产生类型，还可以通过 type 关键字来声明类型。
 type 相当于声明一个类型别名：
 
 ```scala
 object test extends App{
-   // 把String类型用S代替
+   // 把String类型用S代替 
   type S = String
   var name : S= "Oliver"
   println(name)
@@ -1039,7 +1037,7 @@ object test extends App{
 
 通常 type 用于声明某种复杂类型，或用于定义一个抽象类型。
 
-```
+```scala
 class A{
   type T
   def fn(t:T): Unit ={
@@ -1060,7 +1058,7 @@ object test extends App{
 }
 ```
 
-## 5.6 样例类/样例对象
+### 5.6 样例类/样例对象
 
 ```scala
 /*
@@ -1074,6 +1072,31 @@ case class Message(sender:String,massageContent:String)
  */
 case object CheckHeartBeat
 ```
+
+### 5.7 case class 和class的区别
+
+下面就辨析一下如下几个类的区别
+
+```scala
+class AA(name: String)
+class BB(val name: String)
+class CC(var name: String)
+class DD(private val name: String)
+class EE(private[this] val name: String)
+case class FF(name: String)
+case class GG(val name: String)
+case class HH(var name: String)
+case class II(private val name: String)
+case class JJ(private[this] val name: String)
+```
+
+构造器中val修饰的参数，编译之后会在该类中添加一个private final的全局**常量**，同时提供一个用于获取该常量的public方法，无设置方法。
+
+构造器中var修饰的参数，编译之后会在该类中添加一个private的全局**变量**，同时提供两个**获取和设置**该变量值的public方法。
+
+ 构造器中无修饰符的参数，则该参数属于构造函数内的局部参数，仅仅在该构造函数内部访问。
+
+Scala编译器在对case class进行编译的时候做了特殊处理，扩展了其方法和功能，加入了scala.**Product**,scala.**Serializable**的特性，同时为其**提供了该类的伴生对象**。另外，对于case class 构造器参数，其默认以public修饰，可允许外部调用。
 
 ## 6. 模式匹配 match case
 
@@ -1115,7 +1138,7 @@ object test extends App{
   //  Double:2.0
 ```
 
-## 6.2 匹配数组
+### 6.2 匹配数组
 
 ```scala
 object test extends App{
@@ -1140,7 +1163,7 @@ object test extends App{
 }
 ```
 
-## 6.3 匹配集合
+### 6.3 匹配集合
 
 ```scala
 object test extends App{
@@ -1165,7 +1188,7 @@ object test extends App{
 }
 ```
 
-## 6.4 匹配元组
+### 6.4 匹配元组
 
 ```scala
 object test extends App{
@@ -1187,7 +1210,7 @@ object test extends App{
 }
 ```
 
-## 6.5 匹配样例类/样例对象
+### 6.5 匹配样例类/样例对象
 
 ```scala
 case object CheckTimeOutTask
@@ -1225,8 +1248,8 @@ object test extends App{
 #### 7.1.1 隐式参数
 
 定义方法时，可以把参数列表标记为 implicit，表示该参数是隐式参数。一个方法只会有一 个隐式参数列表，置于方法的最后一个参数列表。如果方法有多个隐式参数，只需一个 implicit 修饰即可。
-譬如：deffire(x:Int)(implicita:String,b:Int=9527)
-当调用包含隐式参数的方法是，如果当前上下文中有合适的隐式值，则编译器会自动为该 组参数填充合适的值，且上下文中只能有一个符合预期的隐式值。如果没有编译器会抛出 异常。当然，标记为隐式参数的我们也可以手动为该参数添加默认值。
+譬如：def fire(x:Int)(implicit a:String,b:Int=9527)
+当调用包含隐式参数的方法，如果当前上下文中有合适的隐式值，则编译器会自动为该组参数填充合适的值，且上下文中只能有一个符合预期的隐式值。如果没有编译器会抛出异常。当然，标记为隐式参数的我们也可以手动为该参数添加默认值。
 
 ```scala
 object test extends App{

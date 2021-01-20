@@ -1,8 +1,6 @@
 object Test {
 
-  //定义一个方法
-  //方法 m1 参数要求是一个函数，函数的参数必须是两个Int类型
-  //返回值类型也是Int类型
+  //方法 m1 参数要求是一个函数，函数的参数必须是两个Int类型,返回值类型也是Int类型
   def m1(f: (Int, Int) => Int): Int = {
     f(2, 6)
   }
@@ -16,7 +14,6 @@ object Test {
   def main(args: Array[String]): Unit = {
     //调用m1方法，并传入f1函数
     val r1 = m1(f1)
-
     println(r1)
 
     //调用m1方法，并传入f2函数

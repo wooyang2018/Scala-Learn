@@ -4,33 +4,30 @@ Scala 中使用单例模式时，除了定义的类之外，还要定义一个�
 当单例对象与某个类共享同一个名称时，他被称作是这个类的伴生对象：companion object。你必须在同一个源文件里定义类和它的伴生对象。
 类被称为是这个单例对象的伴生类：companion class。类和它的伴生对象可以互相访问其私有成员。
  */
-// 私有构造方法
-class Marker (val color: String) {
-
-  println("创建" + this)
-  override def toString(): String = "颜色标记：" + color
-
+/*
+ * private val age
+ * age 在本类中有setter和getter方法
+ * 但是加上private 也就意味着age只能在这个类的内部及其伴生类中可以修改
+ */
+class Student3 private(){
+    private var name:String=_
+    // 伴生类可以访问
+    private var age:Int=_
+    // private [this]关键字标识给属性只能在类内部访问，伴生类不能访问
+    private [this] var gender:String="man"
 }
-
-// 伴生对象，与类名字相同，可以访问类的私有属性和方法
-object Marker {
-
-  private val markers: Map[String, Marker] = Map(
-    "red" -> new Marker("red"),
-    "blue" -> new Marker("blue"),
-    "green" -> new Marker("green")
-  )
-
-  def apply(color: String) = {
-    if (markers.contains(color)) markers(color) else null
-  }
-
-  def getMarker(color: String) = {
-    if (markers.contains(color)) markers(color) else null
-  }
-  def main(args: Array[String]) {
-    println(markers("red"))
-    // 单例函数调用，省略了.(点)符号
-    println(getMarker ("blue"))
+// 伴生类
+object Student3{
+  def main(args: Array[String]): Unit = {
+    val student = new Student3()
+    // 伴生对象可以访问
+    student.name="jack"
+    student.age =20
+    println(s"name=${student.name},age=${student.age}")
+    // 伴生类不能访问
+    //println(student.gender)
+    // output:
+    // name=jack,age=20
+ 
   }
 }
