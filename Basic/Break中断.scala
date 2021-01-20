@@ -2,7 +2,7 @@ import scala.util.control._
 
 object Test {
    def main(args: Array[String]) {
-       {
+   {
       var a = 0;
       val numList = List(1,2,3,4,5,6,7,8,9,10);
 
@@ -16,9 +16,10 @@ object Test {
          }
       }
       println( "After the loop" );
-    }
-    {
-        var a = 0;
+   }
+   
+   {
+      var a = 0;
       var b = 0;
       val numList1 = List(1,2,3,4,5);
       val numList2 = List(11,12,13);
@@ -40,6 +41,5 @@ object Test {
          }
       } // 外部循环中断
    }
-    }
-   }
+}
 }

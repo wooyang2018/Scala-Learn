@@ -1,7 +1,5 @@
 # Scala 元组
 
-[![Scala 集合](https://lwy-picgo-img.oss-cn-beijing.aliyuncs.com/img20210119151924.gif) Scala 集合](https://www.runoob.com/scala/scala-collections.html)
-
 与列表一样，元组也是不可变的，但与列表不同的是元组可以包含不同类型的元素。
 
 元组的值是通过将单个的值包含在圆括号中构成的。例如：

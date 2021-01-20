@@ -111,12 +111,6 @@ Age: 32 year, name: Charlie?
 - 提供unapply方法使模式匹配可以工作；
 - 生成toString、equals、hashCode和copy方法，除非显示给出这些方法的定义。
 
-
-
-
-
-
-
 还有几种模式匹配:
 
 ```

@@ -268,7 +268,7 @@ object Marker{
     def main(args: Array[String]) {
         println(Marker("red"))  
         // 单例函数调用，省略了.(点)符号  
-                println(Marker getMarker "blue")  
+        println(Marker getMarker "blue")  
     }
 }
 ```

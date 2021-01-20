@@ -26,7 +26,7 @@ var z = new Array[String](3)
 z(0) = "Runoob"; z(1) = "Baidu"; z(4/2) = "Google"
 ```
 
-最后一个元素的索引使用了表达式 **4/2** 作为索引，类似于 **z(2) = "Google"**。
+最后一个元素的索引使用了表达式 4/2 作为索引，类似于 z(2) = "Google"。
 
 我们也可以使用以下方式来定义一个数组：
 
@@ -215,21 +215,21 @@ $ scala Test
 
 ## Scala 数组方法
 
-下表中为 Scala 语言中处理数组的重要方法，使用它前我们需要使用 **import Array._** 引入包。
+下表中为 Scala 语言中处理数组的重要方法，使用它前我们需要使用 import Array._ 引入包。
 
 | 序号 | 方法和描述                                                   |
 | :--- | :----------------------------------------------------------- |
-| 1    | **def apply( x: T, xs: T\* ): Array[T]**创建指定对象 T 的数组, T 的值可以是 Unit, Double, Float, Long, Int, Char, Short, Byte, Boolean。 |
-| 2    | **def concat[T]( xss: Array[T]\* ): Array[T]**合并数组       |
-| 3    | **def copy( src: AnyRef, srcPos: Int, dest: AnyRef, destPos: Int, length: Int ): Unit**复制一个数组到另一个数组上。相等于 Java's System.arraycopy(src, srcPos, dest, destPos, length)。 |
-| 4    | **def empty[T]: Array[T]**返回长度为 0 的数组                |
-| 5    | **def iterate[T]( start: T, len: Int )( f: (T) => T ): Array[T]**返回指定长度数组，每个数组元素为指定函数的返回值。以上实例数组初始值为 0，长度为 3，计算函数为**a=>a+1**：`scala> Array.iterate(0,3)(a=>a+1) res1: Array[Int] = Array(0, 1, 2)` |
-| 6    | **def fill[T]( n: Int )(elem: => T): Array[T]**返回数组，长度为第一个参数指定，同时每个元素使用第二个参数进行填充。 |
-| 7    | **def fill[T]( n1: Int, n2: Int )( elem: => T ): Array[Array[T]]**返回二数组，长度为第一个参数指定，同时每个元素使用第二个参数进行填充。 |
-| 8    | **def ofDim[T]( n1: Int ): Array[T]**创建指定长度的数组      |
-| 9    | **def ofDim[T]( n1: Int, n2: Int ): Array[Array[T]]**创建二维数组 |
-| 10   | **def ofDim[T]( n1: Int, n2: Int, n3: Int ): Array[Array[Array[T]]]**创建三维数组 |
-| 11   | **def range( start: Int, end: Int, step: Int ): Array[Int]**创建指定区间内的数组，step 为每个元素间的步长 |
-| 12   | **def range( start: Int, end: Int ): Array[Int]**创建指定区间内的数组 |
-| 13   | **def tabulate[T]( n: Int )(f: (Int)=> T): Array[T]**返回指定长度数组，每个数组元素为指定函数的返回值，默认从 0 开始。以上实例返回 3 个元素：`scala> Array.tabulate(3)(a => a + 5) res0: Array[Int] = Array(5, 6, 7)` |
-| 14   | **def tabulate[T]( n1: Int, n2: Int )( f: (Int, Int ) => T): Array[Array[T]]**返回指定长度的二维数组，每个数组元素为指定函数的返回值，默认从 0 开始。 |
+| 1    | def apply( x: T, xs: T\* ): Array[T]创建指定对象 T 的数组, T 的值可以是 Unit, Double, Float, Long, Int, Char, Short, Byte, Boolean。 |
+| 2    | def concat[T]( xss: Array[T]\* ): Array[T]合并数组       |
+| 3    | def copy( src: AnyRef, srcPos: Int, dest: AnyRef, destPos: Int, length: Int ): Unit复制一个数组到另一个数组上。相等于 Java's System.arraycopy(src, srcPos, dest, destPos, length)。 |
+| 4    | def empty[T]: Array[T]返回长度为 0 的数组                |
+| 5    | def iterate[T]( start: T, len: Int )( f: (T) => T ): Array[T]返回指定长度数组，每个数组元素为指定函数的返回值。以上实例数组初始值为 0，长度为 3，计算函数为a=>a+1：`scala> Array.iterate(0,3)(a=>a+1) res1: Array[Int] = Array(0, 1, 2)` |
+| 6    | def fill[T]( n: Int )(elem: => T): Array[T]返回数组，长度为第一个参数指定，同时每个元素使用第二个参数进行填充。 |
+| 7    | def fill[T]( n1: Int, n2: Int )( elem: => T ): Array[Array[T]]返回二数组，长度为第一个参数指定，同时每个元素使用第二个参数进行填充。 |
+| 8    | def ofDim[T]( n1: Int ): Array[T]创建指定长度的数组      |
+| 9    | def ofDim[T]( n1: Int, n2: Int ): Array[Array[T]]创建二维数组 |
+| 10   | def ofDim[T]( n1: Int, n2: Int, n3: Int ): Array[Array[Array[T]]]创建三维数组 |
+| 11   | def range( start: Int, end: Int, step: Int ): Array[Int]创建指定区间内的数组，step 为每个元素间的步长 |
+| 12   | def range( start: Int, end: Int ): Array[Int]创建指定区间内的数组 |
+| 13   | def tabulate[T]( n: Int )(f: (Int)=> T): Array[T]返回指定长度数组，每个数组元素为指定函数的返回值，默认从 0 开始。以上实例返回 3 个元素：`scala> Array.tabulate(3)(a => a + 5) res0: Array[Int] = Array(5, 6, 7)` |
+| 14   | def tabulate[T]( n1: Int, n2: Int )( f: (Int, Int ) => T): Array[Array[T]]返回指定长度的二维数组，每个数组元素为指定函数的返回值，默认从 0 开始。 |
