@@ -117,7 +117,7 @@ object ScalaPrint extends App {
 }
 ```
 
-## 3.6 条件表达式
+### 3.4 条件表达式
 
 ```scala
 /*
@@ -143,7 +143,7 @@ object ScalaIf extends App {
 }
 ```
 
-## 3.7 循环语句和yeild 关键字
+### 3.5 循环语句和yeild 关键字
 
 ```scala
 /*
@@ -188,7 +188,7 @@ object ScalaFor extends App {
 }
 ```
 
-## 3.8 运算符和运算符重载
+### 3.6 运算符和运算符重载
 
 Scala 中的+-*/%等操作符的作用与 Java 一样，位操作符 &|^>><<也一样。
 
@@ -204,7 +204,7 @@ a.+(b)
 
 a 方法 b 可以写成 a.方法(b)
 
-## 3.9 方法的定义与调用
+### 3.7 方法的定义与调用
 
 ![img](https://lwy-picgo-img.oss-cn-beijing.aliyuncs.com/img20210119205520.png)
 
@@ -235,16 +235,15 @@ object ScalaMethod extends App{
 
 ![img](https://lwy-picgo-img.oss-cn-beijing.aliyuncs.com/img20210119205944.png)
 
-## 3.10 函数的定义与调用
+### 3.8 函数的定义与调用
 
-函数定义方式一:
+* 函数定义方式一:
 
 ![img](https://lwy-picgo-img.oss-cn-beijing.aliyuncs.com/img20210119210144.png)
 
 调用:f1(2)，其中 f1 为函数的引用，也可以叫做函数名。function1 表示一个参数的函数。
 
-
-函数定义方式二:
+* 函数定义方式二:
 
 ![img](https://lwy-picgo-img.oss-cn-beijing.aliyuncs.com/img20210119210145.png)
 
@@ -252,7 +251,7 @@ object ScalaMethod extends App{
 
 ![img](https://lwy-picgo-img.oss-cn-beijing.aliyuncs.com/img20210119210146.png)
 
-## 3.11传值调用与传名调用
+### 3.9 传值调用与传名调用
 
 通常，函数的参数是传值参数；也就是说，参数的值在传递给函数之前就已经确定。
 
@@ -289,7 +288,7 @@ object ScalaCallName  extends App{
 }
 ```
 
-## 3.12 可变参数函数
+### 3.10 可变参数函数
 
 ```scala
 /*
@@ -307,7 +306,7 @@ object ScalaVarParams  extends App{
 }
 ```
 
-## 3.13 默认参数值函数
+### 3.11 默认参数值函数
 
 ```scala
 /*
@@ -327,7 +326,7 @@ object ScalaDefaultParams  extends App{
 }
 ```
 
-## 3.14 高阶函数
+### 3.12 高阶函数
 
 ```scala
 /*
@@ -346,7 +345,7 @@ object ScalaHM  extends App{
 }
 ```
 
-## 3.15 部分参数应用函数
+### 3.13 部分参数应用函数
 
 如果函数传递所有预期的参数，则表示已完全应用它。 如果只传递几个参数并不是全部参 数，那么将返回部分应用的函数。这样就可以方便地绑定一些参数，其余的参数可稍后填写 补上。
 
@@ -368,7 +367,7 @@ object ScalaPartParams  extends App{
 }
 ```
 
-## 3.16 柯里化(Currying)
+### 3.14 柯里化(Currying)
 
 柯里化(Currying)指的是将原来接受两个参数的函数变成新的接受一个参数的函数的过程。新 的函数返回一个以原有第二个参数为参数的函数。
 
@@ -396,7 +395,7 @@ object ScalaCurrying  extends App{
 }
 ```
 
-## 3.17 偏函数
+### 3.15 偏函数
 
 被包在花括号内没有 match 的一组 case 语句是一个偏函数，它是 PartialFunction[A,B]的一个 实例，A 代表参数类型，B 代表返回类型，常用作输入模式匹配。
 
@@ -416,13 +415,13 @@ object ScalaPartialFunc  extends App{
 }
 ```
 
-# 4.集合的使用
+## 4.集合的使用
 
 Scala 的集合有三大类：序列 Seq、集 Set、映射 Map，所有的集合都扩展自 Iterable 特质 在 Scala 中集合有可变（mutable）和不可变（immutable）两种类型，immutable 类型的集合 初始化后就不能改变了（注意与 val 修饰的变量进行区别。
 
 ![img](https://lwy-picgo-img.oss-cn-beijing.aliyuncs.com/img20210119210147.png)
 
-## 4.1 定长数组和变长数组
+### 4.1 定长数组和变长数组
 
 ```scala
 /*
@@ -461,7 +460,7 @@ object ScalaArray{
 }
 ```
 
-## 4.2 map|flatten|flatMap|foreach 方法的使用
+### 4.2 map|flatten|flatMap|foreach 方法的使用
 
 ```scala
 object ScalaArray{
@@ -493,7 +492,7 @@ object ScalaArray{
 }
 ```
 
-## 4.3 Seq 序列
+### 4.3 Seq 序列
 
 不可变的序列 importscala.collection.immutable._
 
@@ -525,7 +524,7 @@ object ScalaListTest{
 }
 ```
 
-## 4.4 Set 集
+### 4.4 Set 集
 
 可变的set
 
@@ -566,7 +565,7 @@ object ScalaSetTest{
 }
 ```
 
-## 4.5 集合常用的方法
+### 4.5 集合常用的方法
 
 map, flatten, flatMap, filter, sorted, sortBy, sortWith, grouped, fold(折叠), foldLeft, foldRight, reduce, reduceLeft, aggregate, union, intersect(交集), diff(差集), head, tail, zip, mkString, foreach, length, slice, sum
 
@@ -653,7 +652,7 @@ scala> list.sum
 res14: Int = 15
 ```
 
-## 4.6并行化集合 par
+### 4.6 并行化集合 par
 
 调用集合的 par 方法, 会将集合转换成并行化集合
 
@@ -666,7 +665,7 @@ object ScalaParTest{
 }
 ```
 
-## 4.7 Map 和 Option
+### 4.7 Map 和 Option
 
 在Scala中Option类型样例类用来表示可能存在或也可能不存在的值(Option的子类有Some 和 None)。Some 包装了某个值，None 表示没有值。
 
@@ -686,7 +685,7 @@ object ScalaMapTest{
 }
 ```
 
-## 4.8 案例 wordCount
+### 4.8 案例 wordCount
 
 ```scala
 object ScalaWordCount{
@@ -712,9 +711,9 @@ object ScalaWordCount{
 }
 ```
 
-# 5. 面向对象
+## 5. 面向对象
 
-## 5.1 scala 单例对象
+### 5.1 scala 单例对象
 
 在 Scala 中，是没有 static 这个东西的，但是它也为我们提供了单例模式的实现方法，那 就是使用关键字 object,object 对象不能带参数。
 
@@ -741,9 +740,9 @@ object test{
 }
 ```
 
-## 5.2 scala 类
+### 5.2 scala 类
 
-### 5.2.1 | 类定义 | 主构造器 | 辅助构造器
+#### 5.2.1 | 类定义 | 主构造器 | 辅助构造器
 
 类定义
 
@@ -805,7 +804,7 @@ object test{
 }
 ```
 
-### 5.2.2 访问权限
+#### 5.2.2 访问权限
 
 - 构造器的访问权限
 
@@ -1017,8 +1016,6 @@ object test extends App{
 
 ### 5.5.1final 关键字
 
- 
-
 - 被 final 修饰的类不能被继承；
 - 被 final 修饰的属性不能重写；
 - 被 final 修饰的方法不能被重写。
@@ -1075,9 +1072,9 @@ case class Message(sender:String,massageContent:String)
 case object CheckHeartBeat
 ```
 
-# 6. 模式匹配 match case
+## 6. 模式匹配 match case
 
-## 6.1 匹配字符串/类型/守卫
+### 6.1 匹配字符串/类型/守卫
 
 ```scala
 object test extends App{
@@ -1214,17 +1211,15 @@ object test extends App{
 }
 ```
 
-# 7.Scala 高级语法
+## 7.Scala 高级语法
 
- 
-
-## 7.1 隐式（implicit）详解
+### 7.1 隐式（implicit）详解
 
 - 隐式参数 
 - 隐式转换类型
 - 隐式类
 
-### 7.1.1 隐式参数
+#### 7.1.1 隐式参数
 
 定义方法时，可以把参数列表标记为 implicit，表示该参数是隐式参数。一个方法只会有一 个隐式参数列表，置于方法的最后一个参数列表。如果方法有多个隐式参数，只需一个 implicit 修饰即可。
 譬如：deffire(x:Int)(implicita:String,b:Int=9527)
@@ -1247,7 +1242,7 @@ object test extends App{
 }
 ```
 
-### 7.1.2 隐式的转换类型
+#### 7.1.2 隐式的转换类型
 
 使用隐式转换将变量转换成预期的类型是编译器最先使用 implicit 的地方。当编译器看到类 型 X 而却需要类型 Y，它就在当前作用域查找是否定义了从类型 X 到类型 Y 的隐式定义。
 
@@ -1264,7 +1259,7 @@ object test extends App{
 }
 ```
 
-### 7.1.3 隐式类
+#### 7.1.3 隐式类
 
 在 Scala 中，我们可以在静态对象中使用隐式类。
 
@@ -1282,7 +1277,7 @@ object test extends App{
 }
 ```
 
-## 7.2 泛型
+### 7.2 泛型
 
 通俗的讲，比如需要定义一个函数，函数的参数可以接受任意类型。我们不可能一一列举所 有的参数类型重载函数。
 
@@ -1318,9 +1313,9 @@ object test extends App{
 }
 ```
 
-## 7.3 类型约束
+### 7.3 类型约束
 
-### 7.3.1 上界(UpperBounds)/下界(lowerbounds)
+#### 7.3.1 上界(UpperBounds)/下界(lowerbounds)
 
 - UpperBounds
 
@@ -1362,7 +1357,7 @@ object test extends App{
 [_ >: Test]
 ```
 
-### 7.3.2 视图界定/上下文界定
+#### 7.3.2 视图界定/上下文界定
 
 - Viewbounds
 
