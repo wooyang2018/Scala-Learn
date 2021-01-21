@@ -10,6 +10,7 @@ class Employee extends Person {
 }
 
 object Test extends App {
+  //神奇发现竟然不写在main函数中的语句也能执行
   val fred = new Employee
   fred.name = "Fred"
   fred.salary = 50000
